@@ -1,0 +1,20 @@
+def calculate_solos(teams, players, is_solo):
+  solos = (teams * 2) - players
+  if is_solo.lower() == "yes":
+      solos -= 1
+  return solos
+
+def main():
+  try:
+      teams = int(input("Enter the number of teams: "))
+      players = int(input("Enter the number of players: "))
+      is_solo = input("Are you a solo? (yes/no): ")
+
+      solos = calculate_solos(teams, players, is_solo)
+      print("The number of solos is:", solos)
+
+  except ValueError:
+      print("Please enter valid integer values for teams and players.")
+
+if __name__ == "__main__":
+  main()
